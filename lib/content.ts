@@ -121,6 +121,7 @@ export const content = {
     links: [
       { label: "GitHub", href: "https://github.com/bref457", external: true },
       { label: "kinews", href: "https://kinews.neo457.ch", external: true },
+      { label: "Kontakt", href: "mailto:info@neo457.ch", external: false },
     ],
     copyright: "© 2026 Fabio — neo457.ch",
   },
