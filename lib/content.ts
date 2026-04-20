@@ -50,7 +50,7 @@ export const content = {
     headline: "Läuft alles auf einem Server",
     subline: "Hetzner CX32, nginx als Reverse Proxy, PM2 für Prozesse — alles auf einer Maschine, ohne Kubernetes-Overhead.",
     nodes: [
-      { name: "OpenClaw", url: "openclaw.neo457.ch", tech: "Node.js · PM2 · OpenRouter", status: "live" },
+      { name: "OpenClaw", url: null, tech: "Node.js · PM2 · OpenRouter", status: "live" },
       { name: "kinews", url: "kinews.neo457.ch", tech: "Next.js · Port 3005", status: "live" },
       { name: "PocketBase", url: null, tech: "Docker · SQLite", status: "live" },
       { name: "Obsidian Sync", url: null, tech: "Syncthing · VPS ↔ Laptop", status: "live" },
