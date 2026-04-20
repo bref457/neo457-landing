@@ -12,7 +12,7 @@ export const content = {
   },
   hero: {
     monoLabel: "persönliches ki-system",
-    headline: { line1: "Dein KI-System.", line2: "Deine Regeln.", line3: "Dein Server." },
+    headline: { line1: "Mein KI-System.", line2: "Meine Regeln.", line3: "Mein Server." },
     subline: "Ein privates AI-System auf eigenem Hetzner VPS — Spracheingabe, automatische Reminder, täglicher KI-News-Feed und ein Telegram-Assistent, der wirklich antwortet. Kein SaaS, kein Abo, keine fremden Daten.",
     cta: [
       { label: "GitHub ansehen", href: "https://github.com/bref457/neo457-landing", variant: "primary" },
