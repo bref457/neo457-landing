@@ -2,6 +2,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { content } from '@/lib/content'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
+import KiNewsLightbox from '@/components/ui/KiNewsLightbox'
 
 export default function KiNewsSection() {
   const prefersReducedMotion = useReducedMotion()
@@ -10,14 +11,15 @@ export default function KiNewsSection() {
   return (
     <section id="kinews" className="py-16 lg:py-32 border-t" style={{ borderColor: 'var(--border)' }}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <motion.div
-          variants={animate ? staggerContainer : undefined}
-          initial={animate ? "hidden" : false}
-          animate="visible"
-          className="max-w-xl"
-        >
+        <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+
           {/* Left: Text */}
-          <div className="space-y-7">
+          <motion.div
+            variants={animate ? staggerContainer : undefined}
+            initial={animate ? "hidden" : false}
+            animate="visible"
+            className="flex-1 space-y-7 max-w-xl"
+          >
             <motion.p variants={animate ? fadeInUp : undefined} className="font-mono text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: 'var(--aria)' }}>
               {content.kiNews.sectionLabel}
             </motion.p>
@@ -37,9 +39,19 @@ export default function KiNewsSection() {
             >
               {content.kiNews.linkButton}
             </motion.a>
-          </div>
+          </motion.div>
 
-        </motion.div>
+          {/* Right: Screenshot thumbnails + lightbox */}
+          <motion.div
+            initial={animate ? { y: 16 } : false}
+            animate={{ y: 0 }}
+            transition={animate ? { duration: 0.5, delay: 0.15 } : { duration: 0 }}
+            className="flex-1 max-w-lg"
+          >
+            <KiNewsLightbox />
+          </motion.div>
+
+        </div>
       </div>
     </section>
   )

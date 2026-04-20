@@ -1,5 +1,6 @@
 "use client"
 import { motion, useReducedMotion } from 'framer-motion'
+import Image from 'next/image'
 import { content } from '@/lib/content'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 
@@ -77,53 +78,21 @@ export default function DemoSection() {
             </p>
           </div>
 
-          {/* NeoPlan Mockup */}
+          {/* NeoPlan Screenshot */}
           <motion.div
             initial={animate ? { y: 16 } : false}
             animate={{ y: 0 }}
             transition={animate ? { delay: 0.2, duration: 0.5 } : { duration: 0 }}
             className="rounded-2xl overflow-hidden border"
-            style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+            style={{ borderColor: 'var(--border)' }}
           >
-            {/* NeoPlan Header */}
-            <div className="px-5 py-4 border-b flex items-center justify-between" style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}>
-              <p className="text-base font-bold" style={{ color: 'var(--foreground)' }}>NeoPlan</p>
-              <span className="text-xs px-3 py-1 rounded-lg font-semibold" style={{ background: 'var(--aria)', color: '#000' }}>+ Neu</span>
-            </div>
-            <div className="p-5 space-y-5">
-              {/* Open */}
-              <div>
-                <p className="font-mono text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--muted)' }}>Offen</p>
-                <div className="space-y-2">
-                  {content.demo.neoplan.open.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-3 border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'var(--border)' }}>
-                      <div className="w-5 h-5 rounded-full border-2 shrink-0" style={{ borderColor: 'var(--muted)' }} />
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold truncate" style={{ color: 'var(--foreground)' }}>{item.title}</p>
-                        <p className="text-xs mt-0.5" style={{ color: 'var(--muted)' }}>{item.date}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Done */}
-              <div>
-                <p className="font-mono text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--muted)' }}>Erledigt</p>
-                <div className="space-y-2">
-                  {content.demo.neoplan.done.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-3 border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'var(--border)' }}>
-                      <div className="w-5 h-5 rounded-full shrink-0 flex items-center justify-center" style={{ background: 'var(--aria)' }}>
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold truncate line-through" style={{ color: 'var(--muted)' }}>{item.title}</p>
-                        <p className="text-xs mt-0.5" style={{ color: 'var(--muted)', opacity: 0.6 }}>{item.date}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/neoplan.png"
+              alt="NeoPlan – Aufgabenverwaltung"
+              width={480}
+              height={600}
+              className="w-full h-auto"
+            />
           </motion.div>
         </div>
       </div>
