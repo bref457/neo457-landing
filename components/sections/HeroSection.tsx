@@ -1,5 +1,6 @@
 "use client"
 import { motion, useReducedMotion } from 'framer-motion'
+import Image from 'next/image'
 import { content } from '@/lib/content'
 import { staggerContainer, heroText, fadeInUp } from '@/lib/animations'
 
@@ -97,18 +98,24 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Stat cards — desktop only, kein framer-motion */}
-          <div className="hidden lg:flex flex-col gap-4">
-            {content.hero.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl p-5 border"
-                style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
-              >
-                <p className="text-3xl font-bold" style={{ color: 'var(--aria)' }}>{stat.value}</p>
-                <p className="text-xs mt-1 leading-snug" style={{ color: 'var(--muted)' }}>{stat.label}</p>
-              </div>
-            ))}
+          {/* About block — desktop only */}
+          <div className="hidden lg:flex flex-col items-center gap-5">
+            <div className="rounded-2xl border overflow-hidden" style={{ borderColor: 'var(--border)', background: 'var(--card)' }}>
+              <Image
+                src="/avatar.png"
+                alt="Fabio — neo457"
+                width={260}
+                height={260}
+                className="w-full object-cover"
+                priority
+              />
+            </div>
+            <div className="rounded-2xl border p-5 w-full space-y-2" style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
+              <p className="font-mono text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--aria)' }}>Fabio — neo457</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
+                KI-Enthusiast aus der Schweiz. Ich baue mir mein eigenes KI-System — nicht als Produkt, sondern weil ich verstehen will wie es funktioniert.
+              </p>
+            </div>
           </div>
         </div>
       </div>
