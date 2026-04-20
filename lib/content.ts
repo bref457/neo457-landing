@@ -95,6 +95,7 @@ REMINDER|Zähneputzen|2026-04-12|02:30`,
         { role: "bot", text: '🎙 "Erinnere mich um 10 Uhr daran, Kühltasche einzupacken."' },
         { role: "bot", text: "Alles klar, ist notiert: Heute um 10:00 Uhr Kühltasche einpacken. 🦁" },
         { role: "bot", text: "REMINDER|Kühltasche einpacken|2026-04-19|10:00" },
+        { role: 'buttons', text: '' },
       ],
     },
     neoplan: {

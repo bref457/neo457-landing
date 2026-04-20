@@ -25,7 +25,7 @@ export default function DemoSection() {
           </motion.h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-4 max-w-3xl">
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12">
           {/* Telegram Mockup */}
           <motion.div
             initial={animate ? { y: 16 } : false}
@@ -48,32 +48,57 @@ export default function DemoSection() {
             {/* Messages */}
             <div className="p-5 space-y-3">
               {content.demo.telegram.messages.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  initial={animate ? { y: 6 } : false}
-                  animate={{ y: 0 }}
-                  transition={animate ? { delay: i * 0.15, duration: 0.3 } : { duration: 0 }}
-                  className={`flex ${msg.role === 'audio' ? 'justify-end' : 'justify-start'}`}
-                >
-                  <div
-                    className="max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-line font-mono"
-                    style={
-                      msg.role === 'audio'
-                        ? { background: 'var(--aria)', color: '#000', fontWeight: 500 }
-                        : { background: 'rgba(255,255,255,0.05)', color: 'var(--foreground)', border: '1px solid var(--border)' }
-                    }
+                msg.role === 'buttons' ? (
+                  <motion.div
+                    key={i}
+                    initial={animate ? { y: 6 } : false}
+                    animate={{ y: 0 }}
+                    transition={animate ? { delay: i * 0.15, duration: 0.3 } : { duration: 0 }}
+                    className="flex justify-start"
                   >
-                    {msg.text}
-                  </div>
-                </motion.div>
+                    <div className="flex gap-2 w-full">
+                      <div
+                        className="flex-1 rounded-xl px-3 py-2 text-xs font-semibold text-center"
+                        style={{ border: '1px solid var(--aria)', color: 'var(--aria)', background: 'rgba(74,222,128,0.06)' }}
+                      >
+                        ✅ Erledigt
+                      </div>
+                      <div
+                        className="flex-1 rounded-xl px-3 py-2 text-xs font-semibold text-center"
+                        style={{ border: '1px solid var(--border)', color: 'var(--muted)', background: 'rgba(255,255,255,0.03)' }}
+                      >
+                        ⏳ Später (30m)
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={i}
+                    initial={animate ? { y: 6 } : false}
+                    animate={{ y: 0 }}
+                    transition={animate ? { delay: i * 0.15, duration: 0.3 } : { duration: 0 }}
+                    className={`flex ${msg.role === 'audio' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className="max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-line font-mono"
+                      style={
+                        msg.role === 'audio'
+                          ? { background: 'var(--aria)', color: '#000', fontWeight: 500 }
+                          : { background: 'rgba(255,255,255,0.05)', color: 'var(--foreground)', border: '1px solid var(--border)' }
+                      }
+                    >
+                      {msg.text}
+                    </div>
+                  </motion.div>
+                )
               ))}
             </div>
           </motion.div>
 
           {/* Arrow connector */}
-          <div className="hidden lg:flex flex-col items-center justify-center gap-2 py-4" style={{ color: 'var(--muted)' }}>
-            <div className="text-2xl font-bold" style={{ color: 'var(--aria)', opacity: 0.6 }}>→</div>
-            <p className="text-xs text-center leading-relaxed max-w-[100px]" style={{ color: 'var(--muted)' }}>
+          <div className="hidden lg:flex flex-col items-center justify-center gap-3 py-4">
+            <div className="text-3xl font-bold" style={{ color: 'var(--aria)', opacity: 0.7 }}>→</div>
+            <p className="text-sm text-center leading-relaxed max-w-[120px]" style={{ color: 'var(--muted)' }}>
               Reminder landet in NeoPlan — jederzeit anpassbar
             </p>
           </div>
