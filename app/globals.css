@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aria: #4ade80;
+  --color-aria-dim: rgba(74, 222, 128, 0.15);
+  --color-aria-glow: rgba(74, 222, 128, 0.30);
+  --color-background: #111111;
+  --color-card: #1a1a1a;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-muted: #808080;
+  --color-foreground: #f2f2f2;
+}
+
+/* Hex fallbacks first — ältere iOS Safari ohne oklch-Support */
+:root {
+  --aria: #4ade80;
+  --aria-dim: rgba(74, 222, 128, 0.15);
+  --aria-glow: rgba(74, 222, 128, 0.30);
+  --background: #111111;
+  --card: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.12);
+  --muted: #808080;
+  --foreground: #f2f2f2;
+}
+
+/* oklch überschreibt — für moderne Browser */
+@supports (color: oklch(0 0 0)) {
+  :root {
+    --aria: oklch(0.75 0.2 142);
+    --aria-dim: oklch(0.75 0.2 142 / 15%);
+    --aria-glow: oklch(0.75 0.2 142 / 30%);
+    --background: oklch(0.145 0 0);
+    --card: oklch(0.205 0 0);
+    --border: oklch(1 0 0 / 12%);
+    --muted: oklch(0.5 0 0);
+    --foreground: oklch(0.95 0 0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Sicherheitsnetz: Background immer sichtbar */
+  background-color: #111111;
+  background-color: var(--background);
+}
+
+body {
+  background-color: #111111;
+  background-color: var(--background);
+  color: #f2f2f2;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(74, 222, 128, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 222, 128, 0.07) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  opacity: 0.7;
+  /* Keine CSS-Animation — verhindert iOS Compositor-Probleme */
+}
+
+/* Mobile: kleineres Grid für bessere Performance */
+@media (max-width: 640px) {
+  .grid-bg {
+    background-size: 3rem 3rem;
+    opacity: 0.5;
+  }
+}
