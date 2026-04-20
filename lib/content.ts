@@ -44,6 +44,25 @@ export const content = {
       { label: "NeoPlan", sublabel: "Reminder erscheint in der persönlichen Reminder-App" },
       { label: "Telegram", sublabel: "Zur gesetzten Zeit kommt die Erinnerung zurück" },
     ],
+    snippet: {
+      label: "Skill-Definition",
+      language: "markdown",
+      code: `---
+name: neoplan-reminder
+description: Erstelle einen Reminder. Nutze diesen Skill wenn Fabio sagt
+  "Erinnere mich...", "in X Minuten", "morgen um ..." oder ähnliches.
+---
+
+Antworte mit zwei Zeilen:
+1. Kurze Bestätigung auf Deutsch
+2. Exakt dieses Format:
+
+REMINDER|TITEL|YYYY-MM-DD|HH:MM
+
+Beispiel:
+⏰ Reminder gesetzt: Zähneputzen um 02:30
+REMINDER|Zähneputzen|2026-04-12|02:30`,
+    },
   },
   systemSetup: {
     sectionLabel: "Infrastruktur",

@@ -74,6 +74,30 @@ export default function PipelineSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Code Snippet */}
+        <motion.div
+          variants={animate ? fadeInUp : undefined}
+          initial={animate ? "hidden" : false}
+          animate="visible"
+          className="mt-10 lg:mt-16 rounded-2xl border overflow-hidden"
+          style={{ borderColor: 'var(--border)' }}
+        >
+          <div className="flex items-center gap-2 px-5 py-3 border-b" style={{ borderColor: 'var(--border)', background: 'var(--card)' }}>
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--aria)' }}>
+              {content.pipeline.snippet.label}
+            </span>
+            <span className="font-mono text-xs opacity-40" style={{ color: 'var(--muted)' }}>
+              · skills/neoplan-reminder/SKILL.md
+            </span>
+          </div>
+          <pre
+            className="p-5 text-xs leading-relaxed overflow-x-auto"
+            style={{ background: 'var(--card)', color: 'var(--muted)', fontFamily: 'var(--font-geist-mono, monospace)' }}
+          >
+            <code>{content.pipeline.snippet.code}</code>
+          </pre>
+        </motion.div>
       </div>
     </section>
   )
