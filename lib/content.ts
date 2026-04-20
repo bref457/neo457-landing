@@ -41,7 +41,7 @@ export const content = {
       { label: "Telegram", sublabel: "Sprachnachricht kommt rein, Whisper transkribiert lokal" },
       { label: "OpenClaw", sublabel: "Agent verarbeitet den Intent und ruft den passenden Skill auf" },
       { label: "PocketBase", sublabel: "Reminder wird gespeichert mit Datum und Uhrzeit" },
-      { label: "NeoPlan", sublabel: "Reminder erscheint auf plan.neo457.ch" },
+      { label: "NeoPlan", sublabel: "Reminder erscheint in der persönlichen Reminder-App" },
       { label: "Telegram", sublabel: "Zur gesetzten Zeit kommt die Erinnerung zurück" },
     ],
   },
@@ -52,8 +52,8 @@ export const content = {
     nodes: [
       { name: "OpenClaw", url: "openclaw.neo457.ch", tech: "Node.js · PM2 · OpenRouter", status: "live" },
       { name: "kinews", url: "kinews.neo457.ch", tech: "Next.js · Port 3005", status: "live" },
-      { name: "PocketBase", url: "pb.neo457.ch", tech: "Docker · SQLite", status: "live" },
-      { name: "Obsidian Sync", url: "syncthing.neo457.ch", tech: "Syncthing · VPS ↔ Laptop", status: "live" },
+      { name: "PocketBase", url: null, tech: "Docker · SQLite", status: "live" },
+      { name: "Obsidian Sync", url: null, tech: "Syncthing · VPS ↔ Laptop", status: "live" },
     ],
   },
   kiNews: {

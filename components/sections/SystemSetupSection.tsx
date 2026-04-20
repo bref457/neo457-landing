@@ -47,7 +47,7 @@ export default function SystemSetupSection() {
                   <span className="text-xs font-mono" style={{ color: 'var(--aria)', opacity: 0.7 }}>{node.status}</span>
                 </div>
               </div>
-              <p className="font-mono text-xs break-all" style={{ color: 'var(--aria)', opacity: 0.8 }}>{node.url}</p>
+              {node.url && <p className="font-mono text-xs break-all" style={{ color: 'var(--aria)', opacity: 0.8 }}>{node.url}</p>}
               <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>{node.tech}</p>
             </motion.div>
           ))}
