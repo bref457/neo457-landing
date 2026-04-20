@@ -62,7 +62,7 @@ export default function SystemSetupSection() {
           style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
         >
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--aria)' }} />
-          <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>Hetzner CX32 · 162.55.209.62 · nginx + PM2</span>
+          <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>Hetzner CX32 · nginx + PM2</span>
         </motion.div>
       </div>
     </section>
