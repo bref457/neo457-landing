@@ -62,8 +62,8 @@ export const content = {
     subline: "OpenClaw sammelt, filtert und fasst zusammen. Das Ergebnis landet auf kinews.neo457.ch — täglich kuratiert, plus ein Live-Feed mit aktuellen KI-News aus aller Welt.",
     linkButton: "Alle Artikel lesen →",
     demoCards: [
-      { title: "Anthropic veröffentlicht Claude 4 mit verbesserter Reasoning-Fähigkeit", source: "The Verge", date: "2026-04-13" },
-      { title: "Gemma 4 von Google: Open-Weight-Modell schlägt GPT-4 in mehreren Benchmarks", source: "Ars Technica", date: "2026-04-12" },
+      { title: "Meta präsentiert neues KI-Modell Muse Spark zur Konkurrenz mit Top-Chatbots", source: "CNBC", date: "2026-04-20" },
+      { title: "Anthropic veröffentlicht 'Claude Design' für visuelle Prototypen", source: "TechCrunch", date: "2026-04-19" },
     ],
   },
   demo: {
